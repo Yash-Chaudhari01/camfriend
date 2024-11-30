@@ -1,0 +1,38 @@
+<div class="form-container">
+    <div class="heading text-center">
+      <h1 style="color: #0056b3;" class="display-4">Upload Your Camera Details</h1>
+    </div>
+    
+    <form class="camera-form shadow p-4">
+      <div class="form-group">
+        <label for="cameraName" class="form-label">Camera Name</label>
+        <input
+          type="text"
+          id="cameraName"
+          class="form-control"
+          placeholder="Enter camera name"
+          required
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="cameraFile" class="form-label">Upload Camera Image</label>
+        <input type="file" id="cameraFile" class="form-control" />
+      </div>
+  
+      <div class="form-group">
+        <label for="availableFrom" class="form-label">Available From</label>
+        <input type="date" id="availableFrom" class="form-control" />
+      </div>
+  
+      <div class="form-group">
+        <label for="availableTill" class="form-label">Available Till</label>
+        <input type="date" id="availableTill" class="form-control" />
+      </div>
+  
+      <button onclick="submitClick()" style="background-color: #0056b3;" type="submit" class="btn btn-primary btn-block mt-4">
+        Submit Details
+      </button>
+    </form>
+  </div>
+  

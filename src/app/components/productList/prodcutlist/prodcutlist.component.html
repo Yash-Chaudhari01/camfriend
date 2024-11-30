@@ -1,0 +1,39 @@
+<div class="container ">
+    <h1  class="text-center mb-4 ">List of product</h1>
+    <h1 style="margin-left:500px;">List of Product</h1>
+    <div style="margin-top: 30px;" class="row">
+        
+      <div
+        class="col-md-4 mb-4"
+        *ngFor="let product of products"
+      >
+        <div class="card shadow-sm">
+          <img
+            [src]="product.image"
+            class="card-img-top"
+            alt="{{ product.name }}"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">
+              <strong>Available From:</strong> {{ product.availableFrom }}<br />
+              <strong>Available Till:</strong> {{ product.availableTill }}
+            </p>
+            <div class="d-flex align-items-center justify-content-between">
+              <button class="btn btn-primary">View Details</button>
+              <!-- <img
+                src="../assets/user-profile-icon.png"
+                alt="User Profile"
+                class="rounded-circle"
+                
+              /> -->
+              <div (click)="userClick()" style="width: 40px; height: 40px;">
+                <i class="bi bi-person-circle"></i>              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

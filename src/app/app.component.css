@@ -1,0 +1,91 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Full width navbar */
+    padding: 0 2%; /* Add padding for spacing */
+    background-color: #fff; /* White background for navbar */
+    border-bottom: 1px solid #ddd; /* Optional border for separation */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+    position: fixed; /* Navbar remains fixed at the top */
+    z-index: 1000;
+    
+  }
+  
+  .nav-bar {
+    display: flex;
+    height: 70px;
+    width: 100%; /* Full width of browser */
+    align-items: center;
+    justify-content: space-between; /* Evenly distribute items */
+  }
+  
+  .nav-bar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007bff;
+    flex: 1; /* Aligns the logo to the left */
+    text-align: left;
+  }
+  
+  .nav-bar .nav-links {
+    display: flex;
+    justify-content: center; /* Center the menu items */
+    flex: 2;
+  }
+  
+  .nav-bar .nav-links a {
+    margin: 0 20px; /* Spacing between links */
+    text-decoration: none;
+    color: #333;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-bar .nav-links a:hover {
+    color: #007bff;
+  }
+  
+  .nav-bar .buttons {
+    display: flex;
+    align-items: center;
+    flex: 1; /* Align buttons to the right */
+    justify-content: flex-end;
+    
+  }
+  
+  .nav-bar .buttons .sign-in {
+    background-color: #007bff;
+    margin-right: 15px;
+    padding: 10px 15px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #007bff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .nav-bar .buttons .sign-in:active {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .nav-bar .buttons .sign-up {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-bar .buttons .sign-up:active {
+    background-color: #0056b3; /* Darker blue when clicked */
+  }
