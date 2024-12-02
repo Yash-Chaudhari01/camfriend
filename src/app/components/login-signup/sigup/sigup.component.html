@@ -5,7 +5,7 @@
       <p>Sign up and start your journey today!</p>
     </div>
 
-    <form class="signup-form">
+    <form class="signup-form" >
       <!-- Full Name -->
       <div class="form-group">
         <label for="fullName">Full Name</label>
@@ -14,6 +14,8 @@
           class="form-control"
           id="fullName"
           placeholder="Enter your full name"
+          [(ngModel)]="signupData.fullName"
+          name="fullName"
           required
         />
       </div>
@@ -26,8 +28,25 @@
           class="form-control"
           id="email"
           placeholder="Enter your email"
+          [(ngModel)]="signupData.email"
+          name="email"
           required
         />
+      </div>
+
+      <!-- User Type -->
+      <div class="form-group">
+        <label for="dropdown">User type </label>
+        <select
+          class="form-control"
+          id="dropdown"
+          name="dropdown"
+          [(ngModel)]="signupData.userType"
+          required
+        >
+          <option value="option1">Vender</option>
+          <option value="option2">Customer</option>
+        </select>
       </div>
 
       <!-- Password -->
@@ -38,41 +57,29 @@
           class="form-control"
           id="password"
           placeholder="Create a password"
+          [(ngModel)]="signupData.password"
+          name="password"
           required
         />
       </div>
 
-      <!-- Confirm Password -->
+      <!-- Address -->
       <div class="form-group">
         <label for="confirmPassword">Address</label>
         <input
-          type="password"
+          type="text"
           class="form-control"
           id="confirmPassword"
-          placeholder="Address"
+          placeholder="Enter your address"
+          [(ngModel)]="signupData.address"
+          name="address"
           required
         />
       </div>
 
       <!-- Sign Up Button -->
-      <button type="submit" class="btn btn-primary btn-block">
-        Sign Up
-      </button>
+      <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
 
-      <!-- Divider -->
-      <div class="divider">
-        <span>or</span>
-      </div>
-
-      <!-- Social Login Buttons -->
-      <div class="social-login">
-        <button type="button" class="btn btn-google">
-          <i class="fab fa-google"></i> Sign up with Google
-        </button>
-       
-      </div>
-
-      <!-- Already have an account -->
       <div class="signup-footer">
         <p>
           Already have an account?

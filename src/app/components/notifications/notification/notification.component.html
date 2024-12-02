@@ -1,0 +1,16 @@
+<div (click)="iconClick()" class="notification-bell">
+    <i  class="fa fa-bell"></i>
+    <span class="notification-count" *ngIf="unreadCount > 0">{{ unreadCount }}</span>
+    <div class="dropdown" *ngIf="isDropdownOpen">
+      <ul>
+        <li *ngFor="let notification of notifications">
+          <div [class.unread]="!notification.isRead" (click)="read()">
+            {{ notification.message }}
+            <button  *ngIf="!notification.isRead" >Mark as Read</button>
+          </div>
+        </li>
+      </ul>
+      <button  (click)="markAll()">Mark All as Read</button>
+    </div>
+  </div>
+  

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { SharedService } from '../common/shared.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-home-page',
@@ -9,17 +11,20 @@ import { Router } from '@angular/router';
   styleUrl: './home-page.component.css'
 })
 export class HomePageComponent {
-
   location: { latitude: number; longitude: number } | null = null;
   errorMessage: string | null = null;
-constructor(private router: Router){
+constructor(private router: Router,private sharedService:SharedService){
 
 }
   ngOnInit(): void {
     this.getCurrentLocation();
   }
   searchClick(){
-    this.router.navigate(['/list'])
+    if(this.sharedService.isLoggedIn){
+      this.router.navigate(['/list'])
+    }else{
+      this.router.navigate(['/login'])
+    }
   }
   getCurrentLocation(): void {
     

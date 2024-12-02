@@ -5,12 +5,13 @@ import { WhyChoosesUsComponent } from './components/userComponets/why-chooses-us
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { FeedbackComponent } from './components/userComponets/feedback/feedback.component';
 import { LoginComponent } from './components/login-signup/login/login.component';
-import { sign } from 'crypto';
 import { signalUpdateFn } from '@angular/core/primitives/signals';
 import { SigupComponent } from './components/login-signup/sigup/sigup.component';
 import { ProductDetailsComponent } from './components/vender/product-details/product-details.component';
 import { ProdcutlistComponent } from './components/productList/prodcutlist/prodcutlist.component';
 import { UserProfileComponent } from './components/userComponets/user-profile/user-profile.component';
+import { RentalDealsComponent } from './components/userComponets/rental-deals/rental-deals.component';
+import { ProductReviewComponent } from './components/product/product-review/product-review.component';
 
 const routes: Routes = [
   {
@@ -47,6 +48,14 @@ const routes: Routes = [
   ,{
     path:'profileDetails',
     component:UserProfileComponent
+  }
+  ,{
+    path:'rentalDeals',
+    component:RentalDealsComponent
+  },
+  {
+    path:'productreview',
+    component:ProductReviewComponent
   }
 ];
 

@@ -1,0 +1,29 @@
+<div class="container">
+  <h1 class="text-center mb-4">List of product</h1>
+  <h1 style="margin-left:500px;">Available Listing</h1>
+  <div style="margin-top: 30px;" class="row">
+    <div class="col-md-4 mb-4" *ngFor="let product of apiResponse">
+      <div class="card shadow-sm">
+        <img
+          [src]="product.image_urls[0]"
+          class="card-img-top"
+          alt="{{ product.name }}"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text">
+            <strong>Condition:</strong> {{ product.condition }}<br />
+            <strong>Price per Day:</strong> ₹{{ product.price_per_day }}
+          </p>
+          <div class="d-flex align-items-center justify-content-between">
+            <button (click)="reviewClick()" class="btn btn-primary">Review</button>
+            <button (click)="conformClick()" style="margin-right: 150px;" class="btn btn-primary">Confirm</button>
+            <div style="width: 40px; height: 40px;">
+              <i class="bi bi-person-circle"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+.notification-bell {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .notification-bell i {
+    font-size: 24px;
+  }
+  
+  .notification-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+  }
+  
+  .dropdown {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+    z-index: 1000;
+  }
+  
+  .dropdown ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .dropdown li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .dropdown li.unread {
+    font-weight: bold;
+  }
+  
+  .dropdown button {
+    background: transparent;
+    border: none;
+    color: blue;
+    cursor: pointer;
+  }
+  
