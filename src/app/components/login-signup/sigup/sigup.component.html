@@ -5,7 +5,7 @@
       <p>Sign up and start your journey today!</p>
     </div>
 
-    <form class="signup-form" >
+    <form class="signup-form" (ngSubmit)="onSignup()" #signupForm="ngForm">
       <!-- Full Name -->
       <div class="form-group">
         <label for="fullName">Full Name</label>
@@ -17,7 +17,11 @@
           [(ngModel)]="signupData.fullName"
           name="fullName"
           required
+          #fullName="ngModel"
         />
+        <div *ngIf="fullName.invalid && fullName.touched" class="error">
+          Full Name is required.
+        </div>
       </div>
 
       <!-- Email -->
@@ -31,22 +35,30 @@
           [(ngModel)]="signupData.email"
           name="email"
           required
+          #email="ngModel"
         />
+        <div *ngIf="email.invalid && email.touched" class="error">
+          Valid Email is required.
+        </div>
       </div>
 
       <!-- User Type -->
       <div class="form-group">
-        <label for="dropdown">User type </label>
+        <label for="dropdown">User Type</label>
         <select
           class="form-control"
           id="dropdown"
-          name="dropdown"
+          name="userType"
           [(ngModel)]="signupData.userType"
           required
+          #userType="ngModel"
         >
-          <option value="option1">Vender</option>
-          <option value="option2">Customer</option>
+          <option value="vender">Vendor</option>
+          <option value="customer">Customer</option>
         </select>
+        <div *ngIf="userType.invalid && userType.touched" class="error">
+          Please select a user type.
+        </div>
       </div>
 
       <!-- Password -->
@@ -57,28 +69,38 @@
           class="form-control"
           id="password"
           placeholder="Create a password"
-          [(ngModel)]="signupData.password"
+          [(ngModel)]="signupData.password_hash"
           name="password"
           required
+          #password="ngModel"
         />
+        <div *ngIf="password.invalid && password.touched" class="error">
+          Password is required.
+        </div>
       </div>
 
       <!-- Address -->
       <div class="form-group">
-        <label for="confirmPassword">Address</label>
+        <label for="address">Address</label>
         <input
           type="text"
           class="form-control"
-          id="confirmPassword"
+          id="address"
           placeholder="Enter your address"
           [(ngModel)]="signupData.address"
           name="address"
           required
+          #address="ngModel"
         />
+        <div *ngIf="address.invalid && address.touched" class="error">
+          Address is required.
+        </div>
       </div>
 
       <!-- Sign Up Button -->
-      <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+      <button type="submit" class="btn btn-primary btn-block" [disabled]="signupForm.invalid">
+        Sign Up
+      </button>
 
       <div class="signup-footer">
         <p>

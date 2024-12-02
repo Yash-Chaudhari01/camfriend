@@ -10,29 +10,30 @@ import { Router } from '@angular/router';
   styleUrl: './sigup.component.css'
 })
 export class SigupComponent {
+
+  constructor( private router: Router,private http:HttpClient) {}
+  
   signupData = {
     fullName: '',
     email: '',
-    userType: 'option1',
-    password: '',
+    userType: '',
+    password_hash: '',
     address: ''
   };
-
-  constructor( private router: Router) {}
-
   
-  // onSubmit() {
+  
+  onSignup() {
     
-  //   this.http.post('http://your-api-endpoint/signup', this.signupData)
-  //     .subscribe({
-  //       next: (response) => {
-  //         console.log('Sign up successful', response);
-  //         this.router.navigate(['/login']);  
-  //       },
-  //       error: (error) => {
-  //         console.error('Sign up failed', error);
-  //       }
-  //     });
-  // }
+    this.http.post('https://camfriend-1.onrender.com/users', this.signupData)
+      .subscribe({
+        next: (response) => {
+          console.log('Sign up successful', response);
+          this.router.navigate(['/rentalDeals']);  
+        },
+        error: (error) => {
+          console.error('Sign up failed', error);
+        }
+      });
+  }
 
 }

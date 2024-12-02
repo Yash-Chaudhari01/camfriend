@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-notification',
@@ -7,7 +8,12 @@ import { Component } from '@angular/core';
   templateUrl: './notification.component.html',
   styleUrl: './notification.component.css'
 })
+
+
+
 export class NotificationComponent {
+  // constructor(private http: HttpClient) {}
+
   unreadCount:number=3;
   markAll(){
    this. unreadCount=0;

@@ -1,5 +1,4 @@
 <div class="container">
-
   <main class="hero-section">
     <div class="text-content">
       <h1>
@@ -10,27 +9,41 @@
     </div>
     <div class="camera-image">
       <img
-          src="https://th.bing.com/th?id=OIP.RVtk-SU250nOVEDOZWsmYwHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.6&pid=3.1&rm=2"  
-        
+        src="https://th.bing.com/th?id=OIP.RVtk-SU250nOVEDOZWsmYwHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.6&pid=3.1&rm=2"  
         alt="Camera" />
-
     </div>
   </main>
 
   <div class="search-form">
     <div class="form-field">
       <label for="location">Location</label>
-      <input id="location" placeholder="Search your location" />
+      <input
+        id="location"
+        placeholder="Search your location"
+        [(ngModel)]="searchData.location"  
+        name="location"
+      />
     </div>
     <div class="form-field">
       <label for="pickup-date">Pickup Date</label>
-      <input type="date" id="pickup-date" />
+      <input
+        type="date"
+        id="pickup-date"
+        [(ngModel)]="searchData.pickupDate" 
+        name="pickupDate"
+      />
     </div>
     <div class="form-field">
       <label for="return-date">Return Date</label>
-      <input type="date" id="return-date" />
+      <input
+        type="date"
+        id="return-date"
+        [(ngModel)]="searchData.returnDate" 
+        name="returnDate"
+      />
     </div>
     <div>
-    <button (click)="searchClick()" style="margin-top: 30px;" class="search-button">Search</button>
-  </div></div>
+      <button (click)="searchClick()" style="margin-top: 30px;" class="search-button">Search</button>
+    </div>
+  </div>
 </div>
