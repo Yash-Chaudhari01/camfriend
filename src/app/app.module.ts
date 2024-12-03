@@ -16,6 +16,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RentalDealsComponent } from './components/userComponets/rental-deals/rental-deals.component';
 import { NotificationComponent } from './components/notifications/notification/notification.component';
 import { ProductReviewComponent } from './components/product/product-review/product-review.component';
+import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule
+
 
 @NgModule({
   declarations: [
@@ -39,6 +41,7 @@ import { ProductReviewComponent } from './components/product/product-review/prod
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule, 
+    HttpClientModule
 ],
   providers: [
     provideClientHydration(withEventReplay())
