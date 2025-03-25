@@ -1,0 +1,35 @@
+<!-- Voice Recorder -->
+<div class="voice-container" >
+    <h2>Voice to Text Converter</h2>
+  
+    <div class="status">
+      <div *ngIf="isRecording" class="recording-indicator">
+        <div class="pulse"></div>
+        <span>Recording ({{ recordingTime }}s)...</span>
+      </div>
+    </div>
+  
+    <div class="controls">
+      <button (click)="toggleRecording()" [class.recording]="isRecording">
+        <i class="fas" [class.fa-microphone]="!isRecording" [class.fa-stop]="isRecording"></i>
+        {{ isRecording ? 'Stop Recording' : 'Start Recording' }}
+      </button>
+    </div>
+  
+    <div class="result">
+      <h3>Live Transcript:</h3>
+      <p>{{ liveTranscript || '(Speak to see text appear)' }}</p>
+    </div>
+  
+    <div *ngIf="finalTranscript" class="final-result">
+      <h3>Final Result:</h3>
+      <p>{{ finalTranscript }}</p>
+      <button (click)="copyToClipboard()" class="copy-btn">
+        <i class="fas fa-copy"></i> Copy Text
+      </button>
+    </div>
+  
+    <div class="error" *ngIf="errorMessage">
+      <i class="fas fa-exclamation-triangle"></i> {{ errorMessage }}
+    </div>
+  </div>

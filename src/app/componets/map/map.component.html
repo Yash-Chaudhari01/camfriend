@@ -1,0 +1,59 @@
+<div class="safety-app">
+    <h1>{{title}}</h1>
+    
+    <div class="map-container">
+      <div id="map"></div>
+    </div>
+  
+    <div class="controls">
+      <button (click)="startTracking()" [disabled]="isTracking" class="btn start-btn">
+        <i class="fas fa-play"></i> Start Tracking
+      </button>
+      
+      <button (click)="stopTracking()" [disabled]="!isTracking" class="btn stop-btn">
+        <i class="fas fa-stop"></i> Stop Tracking
+      </button>
+      
+      <button (click)="triggerEmergency()" [disabled]="!isTracking" class="btn emergency-btn">
+        <i class="fas fa-bell"></i> EMERGENCY!
+      </button>
+      
+      <button (click)="resetEmergency()" [disabled]="!emergencyMode" class="btn reset-btn">
+        <i class="fas fa-undo"></i> Reset Emergency
+      </button>
+      
+      <button (click)="clearPath()" class="btn clear-btn">
+        <i class="fas fa-trash"></i> Clear Path
+      </button>
+      
+      <button (click)="centerMap()" [disabled]="pathCoordinates.length === 0" class="btn center-btn">
+        <i class="fas fa-crosshairs"></i> Center Map
+      </button>
+    </div>
+  
+    <div class="emergency-button">
+      <button (click)="triggerEmergency()" class="btn btn-danger">
+        <i class="fas fa-bell"></i> Send Emergency Alert
+      </button>
+    </div>
+  
+    <div class="status">
+      <p *ngIf="isTracking && pathCoordinates.length > 0">
+        <i class="fas fa-circle" style="color: green;"></i> Tracking active - 
+        Path points: {{pathCoordinates.length}} 
+        | Last location: 
+        {{pathCoordinates[pathCoordinates.length-1].lat.toFixed(4)}}, 
+        {{pathCoordinates[pathCoordinates.length-1].lng.toFixed(4)}}
+      </p>
+      <p *ngIf="isTracking && pathCoordinates.length === 0">
+        <i class="fas fa-spinner fa-spin"></i> Acquiring your location...
+      </p>
+      <p *ngIf="!isTracking">
+        <i class="fas fa-circle" style="color: red;"></i> Tracking inactive - Click "Start Tracking" to begin
+      </p>
+      <p *ngIf="emergencyMode" class="emergency-alert">
+        <i class="fas fa-exclamation-triangle"></i> EMERGENCY MODE ACTIVE - Authorities notified
+      </p>
+    </div>
+  </div>
+  

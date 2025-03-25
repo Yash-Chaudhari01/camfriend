@@ -1,0 +1,98 @@
+/* voice recorder */
+
+.voice-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 10px;
+    background: #f5f5f5;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background: #3f51b5;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin: 0.5rem;
+  }
+  button.recording {
+    background: #d32f2f;
+  }
+  button.copy-btn {
+    background: #4CAF50;
+    margin-top: 1rem;
+  }
+  .pulse {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: #d32f2f;
+    border-radius: 50%;
+    margin-right: 8px;
+    animation: pulse 1.5s infinite;
+  }
+  @keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  .result, .final-result {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: white;
+    border-radius: 5px;
+    text-align: left;
+    min-height: 80px;
+  }
+  .error {
+    color: #d32f2f;
+    margin-top: 1rem;
+  }
+
+
+  /* call functionality */
+  .call-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  }
+  
+  .call-button {
+    background: #ff4b5c;
+    color: white;
+    font-size: 20px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .call-button:hover {
+    background: #ff1e42;
+    transform: scale(1.1);
+  }
+  
+  .call-button:active {
+    transform: scale(1);
+    box-shadow: none;
+  }
+  
+
+  #map {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .map-container {
+    height: 400px; /* or any fixed/vh height */
+    width: 100%;   /* <-- Ensure this is a normal space, not a hidden char */
+}
